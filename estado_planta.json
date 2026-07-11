@@ -2,7 +2,7 @@
   "contenedores": [
     { "nombre": "Plástico", "llenadoActual": 0,00 },
     { "nombre": "Vidrio", "llenadoActual": 0,00 },
-    { "nombre": "Papel", "llenadoActual": 5,41 },
-    { "nombre": "Metal", "llenadoActual": 0,70 }
+    { "nombre": "Papel", "llenadoActual": 0,00 },
+    { "nombre": "Metal", "llenadoActual": 0,00 }
   ]
 }

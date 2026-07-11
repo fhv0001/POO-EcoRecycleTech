@@ -14,7 +14,7 @@ public class VistaPlanta extends JFrame {
 
     public VistaPlanta() {
         setTitle("EcoRecycle Tech SA - Panel de Control Visual");
-        setSize(500, 350);
+        setSize(800, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
