@@ -133,8 +133,11 @@ public class ControladorPlanta {
             out.println("  \"contenedores\": [");
             for (int i = 0; i < contenedores.size(); i++) {
                 Contenedor c = contenedores.get(i);
-                out.printf("    { \"nombre\": \"%s\", \"llenadoActual\": %.2f }%s\n",
+                // USAMOS String.format CON Locale.US PARA FORZAR EL PUNTO EN LOS DECIMALES
+                String lineaJson = String.format(java.util.Locale.US,
+                        "    { \"nombre\": \"%s\", \"llenadoActual\": %.2f }%s",
                         c.getNombre(), c.getLlenadoActual(), (i == contenedores.size() - 1) ? "" : ",");
+                out.println(lineaJson);
             }
             out.println("  ]");
             out.println("}");
@@ -152,10 +155,16 @@ public class ControladorPlanta {
             while ((linea = br.readLine()) != null) {
                 for (Contenedor c : contenedores) {
                     if (linea.contains("\"nombre\": \"" + c.getNombre() + "\"")) {
-                        // Extracción manual simple de datos JSON nativa sin librerías externas
                         String[] partes = linea.split("\"llenadoActual\":");
                         if (partes.length > 1) {
-                            String valorStr = partes[1].replace("}", "").replace(",", "").trim();
+                            // Limpiamos la llave y los espacios
+                            String valorStr = partes[1].replace("}", "").trim();
+
+                            // Si la línea terminaba en coma (porque había otro elemento), se la quitamos al final
+                            if (valorStr.endsWith(",")) {
+                                valorStr = valorStr.substring(0, valorStr.length() - 1).trim();
+                            }
+
                             double valor = Double.parseDouble(valorStr);
                             c.setLlenadoActual(valor);
                         }

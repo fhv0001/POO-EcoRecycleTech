@@ -1,8 +1,8 @@
 {
   "contenedores": [
-    { "nombre": "Plástico", "llenadoActual": 0,00 },
-    { "nombre": "Vidrio", "llenadoActual": 0,00 },
-    { "nombre": "Papel", "llenadoActual": 0,00 },
-    { "nombre": "Metal", "llenadoActual": 0,00 }
+    { "nombre": "Plástico", "llenadoActual": 10.90 },
+    { "nombre": "Vidrio", "llenadoActual": 0.00 },
+    { "nombre": "Papel", "llenadoActual": 1.57 },
+    { "nombre": "Metal", "llenadoActual": 2.13 }
   ]
 }
